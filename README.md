@@ -10,3 +10,5 @@
 * sqllite
 * postgress
 * Heroku deployement
+* pyqt5
+* pyqt5 designer
