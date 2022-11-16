@@ -1,0 +1,15 @@
+
+{% include 'menu.html' %}
+
+{% for row in users %}
+<ul>
+    <li>{{row.username}}
+        <ul>
+            <li>{{row.email}}</li>
+            <li><a href="/user/{{row.id}}/delete">Delete</a></li>
+        </ul>
+    </li>
+    
+</ul>
+
+{%endfor%}
