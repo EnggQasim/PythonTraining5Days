@@ -13,6 +13,8 @@
         asgi.py
         wsgi.py
     ```
+    
+    
     * **manage.py:** A command-line utility that lets you interact with this Django project in various ways. You can read all the details about manage.py in django-admin and manage.py.
     * The inner **mysite/** directory is the actual Python package for your project. Its name is the Python package name you’ll need to use to import anything inside it (e.g. **mysite.urls**).
     * **mysite/__init__.py:** An empty file that tells Python that this directory should be considered a Python package. If you’re a Python beginner, read more about packages in the official Python docs.
@@ -91,6 +93,19 @@ The idea behind include() is to make it easy to plug-and-play URLs. Since polls 
 When to use include()
 
 You should always use include() when you include other URL patterns. admin.site.urls is the only exception to this.
+```
+
+
+* **mysite/urls.py**
+```
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("polls/", include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+
 ```
 
 ## Go to http://localhost:8000/polls/ in your browser, and you should see the text “Hello, world. You’re at the polls index.”, which you defined in the index view.
